@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let drob = {
+        //     numerator ,  // числитель
+        //     denominator  // знаменатель
+        // }
+    //     function Sloj(numerator1,numerator2,denominator1,denominator2){
+    //         let res1 =  numerator1 * denominator2 + denominator1*numerator2
+    //         let res2 = denominator1 * denominator2
+    //         let res3 = res1 +'\n'+'--'+'\n' + res2
+    //         return res3
+    //     }
+    // //    alert(Sloj(3,5,7,6))
+
+    //    function Drob(numerator1,numerator2,denominator1,denominator2){
+    //        this.numerator1 = numerator1
+    //        this.numerator2 = numerator2
+    //        this.denominator1 = denominator1
+    //        this.denominator2 = denominator2
+    //        this.sloj =function(numerator1,numerator2,denominator1,denominator2){
+    //            this.numerator1 = prompt('enter numerator1')
+    //            this.numerator2 = prompt('enter numerator2')
+    //            this.denominator1 = prompt('enter denominator1')
+    //            this.denominator2 = prompt('enter denominator2')
+    //             let res1 =  this.numerator1 * this.denominator2 + this.denominator1*this.numerator2
+    //             let res2 = this.denominator1 * this.denominator2
+    //             let res3 = res1 +'\n'+'--'+'\n' + res2
+    //             alert( res3)
+    //         }
+    //         this.vichetanie =function(numerator1,numerator2,denominator1,denominator2){
+    //            this.numerator1 = prompt('enter numerator1')
+    //            this.numerator2 = prompt('enter numerator2')
+    //            this.denominator1 = prompt('enter denominator1')
+    //            this.denominator2 = prompt('enter denominator2')
+    //             let res1 =  this.numerator1 * this.denominator2 - this.denominator1*this.numerator2
+    //             let res2 = this.denominator1 * this.denominator2
+    //             let res3 = res1 +'\n'+'--'+'\n' + res2
+    //             alert( res3)
+    //         }
+    //         this.mult =function(numerator1,numerator2,denominator1,denominator2){
+    //            this.numerator1 = prompt('enter numerator1')
+    //            this.numerator2 = prompt('enter numerator2')
+    //            this.denominator1 = prompt('enter denominator1')
+    //            this.denominator2 = prompt('enter denominator2')
+    //             let res1 =  this.numerator1 * this.denominator2 * this.denominator1*this.numerator2
+    //             let res2 = this.denominator1 * this.denominator2
+    //             let res3 = res1 +'\n'+'--'+'\n' + res2
+    //             alert( res3)
+    //         }
+    //         this.division =function(numerator1,numerator2,denominator1,denominator2){
+    //            this.numerator1 = prompt('enter numerator1')
+    //            this.numerator2 = prompt('enter numerator2')
+    //            this.denominator1 = prompt('enter denominator1')
+    //            this.denominator2 = prompt('enter denominator2')
+    //             let res1 =  this.numerator1 * this.denominator2 / this.denominator1*this.numerator2
+    //             let res2 = this.denominator1 * this.denominator2
+    //             let res3 = res1 +'\n'+'--'+'\n' + res2
+    //             alert( res3)
+    //         }
+    //    }
+    //    let drop = new Drob()
+       // drop.sloj()//
+       //drop.vichetanie()
+       //drop.mult()
+      // drop.division()
+      function Time(){
+            this.second 
+            this.minut
+            this.hours 
+            this.getSeconds = function(res){
+                    var date = new Date();
+                    this.second = +prompt('enter seconds')
+                   res =  date.setSeconds(date.getSeconds() + this.second);
+                   let resSecond = parseInt((res / 1000)%60)
+                   return Math.ceil(resSecond)
+                }
+                this.getMinuts=function(res){
+                    let date = new Date()
+                    this.minut = +prompt('enter minutes')
+                   res =  date.setMinutes(date.getMinutes()+this.minut)
+                   let resMunutes = parseInt((res / (1000 * 60)) % 60)
+                   return Math.ceil(resMunutes)
+                }
+                this.getHours=function(res){
+                 let date = new Date()
+                 this.hours = +prompt('enter hours')
+                 res = date.setHours(date.getHours()+this.hours)
+                 let  resHour =  (res / (1000 * 60 * 60) %24 )
+                 return Math.ceil(++resHour)
+                }
+                this.printTime=function() {
+                    let date = new Date()
+                    let funckSecond = this.getSeconds()
+                     let funckMinuts = this.getMinuts()
+                     let funckours = this.getHours()
+
+                    if(funckSecond>59){
+                        res =  date.setMinutes(date.getMinutes()+2)
+                         let resMunutes = parseInt((res / (1000 * 60)) % 60)
+                    }
+                    if( funckMinuts<59){
+                        res = date.setHours(date.getHours()+2)
+                        let  resHour =  (res / (1000 * 60 * 60) %24 )
+                    }
+                    let resMunutes = parseInt((res / (1000 * 60)) % 60)
+                    Math.ceil(resMunutes)
+                          let  resHour =  (res / (1000 * 60 * 60) %24 )
+                    Math.ceil(resHour)  
+                    console.log( Math.ceil(resHour)+ ':'+ resMunutes+':'+funckSecond) 
+                }
+        }
+            let time = new Time()
+            time.printTime() 
+    </script>
+</head>
+<body>
+
+</body>
+</html>
